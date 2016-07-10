@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Snowburst+One);
+body {
+  background-color: #111;
+}
+
+#b-plus,
+#b-minus,
+#s-plus,
+#s-minus,
+.buttons span {
+  cursor: pointer;
+}
+
+.pomo-clock {
+  border: 1px solid #ccc;
+  max-width: 550px;
+  margin: 20px auto;
+  border-radius: 5px;
+  padding: 10px;
+  background: #333;
+}
+
+hr {
+  max-width: 480px;
+  border: 1px dotted gray;
+  border-radius: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: snowburst one;
+  margin: 20px 0 40px;
+  font-size: 300%;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.break,
+.session {
+  color: #fff;
+  font-size: 130%;
+  max-width: 120px;
+  margin: 40px auto 0;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  background: #111;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.arrow-down {
+  height: 0;
+  width: 0;
+  margin: auto;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-top: 15px solid #111;
+}
+
+.count-down {
+  position: relative;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.count-down #progress {
+  background: none;
+  border-radius: 5px;
+  padding: 4px;
+  width: 0;
+  height: 90px;
+}
+
+.count-down #percent {
+  display: none;
+  text-align: right;
+}
+
+.count-down #cd-time {
+  font-size: 350%;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
+.click-area {
+  border: 1px solid #ccc;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.buttons {
+  max-width: 160px;
+  margin: auto;
+}
+
+.buttons img {
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  border: 2px solid transparent;
+}
+
+.buttons span {
+  padding: 5px;
+}
+
+.buttons img:hover {
+  border: 2px solid #ccc;
+  border-radius: 100%;
+  padding: 5px;
+}
