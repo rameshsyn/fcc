@@ -1,0 +1,385 @@
+/*Main container*/
+
+.container {
+  height: auto;
+  width: auto;
+  padding: 30px;
+}
+
+
+/* 3D object */
+ 
+.calculater {
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 500px;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+figure {
+  margin: 30px 100px;
+  display: block;
+  position: absolute;
+}
+
+.front-s {
+  -webkit-transform: rotateX(30deg) translateZ(50px);
+  -moz-transform: rotateX(30deg) translateZ(50px);
+  -o-transform: rotateX(30deg) translateZ(50px);
+  transform: rotateX(30deg) translateZ(50px);
+}
+
+.back-s {
+  -webkit-transform: rotateX(30deg) translateZ(-50px);
+  -moz-transform: rotateX(30deg) translateZ(-50px);
+  -o-transform: rotateX(30deg) translateZ(-50px);
+  transform: rotateX(30deg) translateZ(-50px);
+}
+
+.right-s {
+  -webkit-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+  -moz-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+  -o-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+  transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+}
+
+.left-s {
+  -webkit-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+  -moz-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+  -o-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+  transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+}
+
+.top-s {
+  -webkit-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+  -moz-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+  -o-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+  transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+}
+
+.bottom-s {
+  -webkit-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+  -moz-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+  -o-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+  transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+}
+
+@-webkit-keyframes front {
+  0% {
+    -webkit-transform: translateZ(50px);
+    -moz-transform: translateZ(50px);
+    -o-transform: translateZ(50px);
+    transform: translateZ(50px);
+  }
+  100% {
+    -webkit-transform: rotateX(30deg) translateZ(50px);
+    -moz-transform: rotateX(30deg) translateZ(50px);
+    -o-transform: rotateX(30deg) translateZ(50px);
+    transform: rotateX(30deg) translateZ(50px);
+  }
+}
+
+@-webkit-keyframes back {
+  0% {
+    -webkit-transform: translateZ(-50px);
+    -moz-transform: translateZ(-50px);
+    -o-transform: translateZ(-50px);
+    transform: translateZ(-50px);
+  }
+  100% {
+    -webkit-transform: rotateX(30deg) translateZ(-50px);
+    -moz-transform: rotateX(30deg) translateZ(-50px);
+    -o-transform: rotateX(30deg) translateZ(-50px);
+    transform: rotateX(30deg) translateZ(-50px);
+  }
+}
+
+@-webkit-keyframes right {
+  0% {
+    -webkit-transform: rotateY(90deg) translateZ(300px);
+    -moz-transform: rotateY(90deg) translateZ(300px);
+    -o-transform: rotateY(90deg) translateZ(300px);
+    transform: rotateY(90deg) translateZ(300px);
+  }
+  100% {
+    -webkit-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+    -moz-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+    -o-transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+    transform: rotateX(30deg) rotateY(90deg) translateZ(300px);
+  }
+}
+
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: rotateY(90deg) translateZ(-50px);
+    -moz-transform: rotateY(90deg) translateZ(-50px);
+    -o-transform: rotateY(90deg) translateZ(-50px);
+    transform: rotateY(90deg) translateZ(-50px);
+  }
+  100% {
+    -webkit-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+    -moz-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+    -o-transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+    transform: rotateX(30deg) rotateY(90deg) translateZ(-50px);
+  }
+}
+
+@-webkit-keyframes top {
+  0% {
+    -webkit-transform: rotateX(90deg) translateZ(50px);
+    -moz-transform: rotateX(90deg) translateZ(50px);
+    -moz-transform: rotateX(90deg) translateZ(50px);
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  100% {
+    -webkit-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+    -moz-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+    -o-transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+    transform: rotateX(120deg) translateY(-75px) translateZ(70px);
+  }
+}
+
+@-webkit-keyframes bottom {
+  0% {
+    -webkit-transform: rotateX(90deg) translateZ(-350px);
+    -moz-transform: rotateX(90deg) translateZ(-350px);
+    -o-transform: rotateX(90deg) translateZ(-350px);
+    transform: rotateX(90deg) translateZ(-350px);
+  }
+  100% {
+    -webkit-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+    -moz-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+    -o-transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+    transform: rotateX(120deg) translateY(-75px) translateZ(-330px);
+  }
+}
+
+.calculater .front {
+  height: 400px;
+  width: 350px;
+  background: rgba(24, 24, 26, 0.99);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 5px 5px 20px #777;
+  animation: front 3s;
+  -webkit-animation: front 3s;
+  -moz-animation: front 3s;
+  -o-animation: front 3s;
+  
+}
+
+.calculater .back {
+  height: 400px;
+  width: 350px;
+  -webkit-animation: back 3s;
+  -moz-animation: back 3s;
+  -o-animation: back 3s;
+  animation: back 3s;
+}
+
+.calculater .right {
+  height: 400px;
+  width: 100px;
+  -webkit-animation: right 3s;
+  -moz-animation: right 3s;
+  -o-animation: right 3s;
+  animation: right 3s;
+}
+
+.calculater .left {
+  height: 400px;
+  width: 100px;
+  -webkit-animation: left 3s;
+  -moz-animation: left 3s;
+  -o-animation: left 3s;
+  animation: left 3s;
+}
+
+.calculater .top {
+  height: 100px;
+  width: 350px;
+  -webkit-animation: top 3s;
+  -moz-animation: top 3s;
+  -o-animation: top 3s;
+  animation: top 3s;
+}
+
+.calculater .bottom {
+  height: 100px;
+  width: 350px;
+  background: #555;
+  border-radius: 20px 20px 0 0;
+  -webkit-animation: bottom 3s;
+  -moz-animation: bottom 3s;
+  -o-animation: bottom 3s;
+  animation: bottom 3s;
+}
+
+
+/*calculater area*/
+
+.front .display {
+  height: 80px;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.front .display .screen {
+  height: 60px;
+  display: block;
+  width: 310px;
+  margin: 15px auto 0;
+  padding: 10px;
+  background: #9F8A60;
+  color: #ccc;
+  font-size: 150%;
+  border-radius: 5px;
+  border: 3px solid #555;
+  -webkit-user-select: none;
+}
+
+.front i {
+  text-align: center;
+  display: block;
+  color: white;
+}
+
+.front hr {
+  width: 300px;
+  border-radius: 100%;
+  border: 1px solid white;
+  margin: 0 auto;
+}
+
+.front .click-area {
+  -webkit-user-select: none;
+  padding: 2px 10px;
+  margin: 10px auto 0;
+  width: 300px;
+  height: auto;
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.click-area .click-top {
+  background: none;
+}
+
+.click-area .click-top button {
+  height: 40px;
+  width: 50px;
+  outline: 0;
+  margin: 3px 50px 3px 0;
+  border-radius: 5px;
+  border: 0;
+  background: #002;
+  border: 3px solid #003;
+  box-shadow: 0 10px 15px #003;
+}
+
+.click-area .click-top button:hover {
+  box-shadow: 0 10px 15px #001;
+  border: 2px solid #002;
+}
+
+.click-area .click-top button:active {
+  border: 4px solid #002;
+  box-shadow: 0 5px 15px #111;
+}
+
+.click-area .click-top button:last-child {
+  margin: 0 0 0 20px;
+  background: #900;
+  border: 3px solid #b00;
+  box-shadow: 0 10px 15px #a00;
+}
+
+.click-area .click-top button:last-child:hover {
+  box-shadow: 0 10px 15px #800;
+  border: 2px solid #900;
+}
+
+.click-area .click-top button:last-child:active {
+  border: 4px solid #b00;
+  box-shadow: 0 5px 15px #500;
+}
+
+.click-area .row {
+  margin-top: 10px;
+}
+
+.click-area .col-xs-8 button {
+  height: 40px;
+  width: 40px;
+  margin: 10px 10px 0 5px;
+  border-radius: 100%;
+  border: 3px solid #ddd;
+  box-shadow: 0 10px 15px #444;
+  outline: 0;
+  background: #777;
+}
+
+.click-area .col-xs-8 button:hover {
+  box-shadow: 0 10px 15px #111;
+  border: 2px solid #eee;
+}
+
+.click-area .col-xs-8 button:active {
+  border: 4px solid #eee;
+  box-shadow: 0 5px 15px #111;
+}
+
+.click-area .col-xs-4 button {
+  height: 40px;
+  width: 30px;
+  background: #080;
+  outline: 0;
+  margin: 5px 2px;
+  border: 3px solid #090;
+  box-shadow: 0 10px 15px #090;
+  border-radius: 3px;
+}
+
+.click-area .col-xs-4 button:hover {
+  box-shadow: 0 10px 15px #040;
+  border: 2px solid #080;
+}
+
+.click-area .col-xs-4 button:active {
+  border: 4px solid #090;
+  box-shadow: 0 5px 15px #020;
+}
+
+.col-xs-4 button:nth-child(5),
+.col-xs-4 button:nth-child(6) {
+  background: #050;
+  border: 3px solid #060;
+  box-shadow: 0 10px 15px #060;
+  width: 69px;
+  margin: 5px 0;
+}
+
+.col-xs-4 button:nth-child(5):hover,
+.col-xs-4 button:nth-child(6):hover {
+  box-shadow: 0 10px 15px #020;
+  border: 2px solid #050;
+}
+
+.col-xs-4 button:nth-child(5):active,
+.col-xs-4 button:nth-child(6):active {
+  border: 4px solid #060;
+  box-shadow: 0 5px 15px #010;
+}
+
+i {
+  display: block;
+  text-align: center;
+}
