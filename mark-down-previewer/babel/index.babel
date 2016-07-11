@@ -1,0 +1,33 @@
+var App = React.createClass({
+  getInitialState: function() {
+    return {
+      markedTexts: 'Markdown Previewer - FCC\n=====================\n### Heading\n*italic*\n**bold**\n### List\n* List 1\n* List 2\n* List 3\n\n[Ramesh Syangtan](http://freecodecamp.com/rameshsyn)'
+    }
+  },
+ rawMarkup: function(text) {
+    var rawMarkup = marked(text,{sanitize: true});
+   return {__html : rawMarkup};
+  },
+  update: function(event) {
+    this.setState({
+      markedTexts: event.target.value
+    });
+},
+  
+  render: function() {
+    return (
+      <div className="row container">
+        <div className="col-xs-6">
+          <textarea className="textarea" type="text" cols="60" rows="20" defaultValue={this.state.markedTexts} onChange={this.update.bind(this)}></textarea>
+        </div>
+        <div className="col-xs-6 previewer">
+          <span dangerouslySetInnerHTML={this.rawMarkup(this.state.markedTexts)}></span>
+         </div>
+       </div>
+
+    )
+
+  }
+
+});
+ReactDOM.render(<App/>, document.getElementById('app'));

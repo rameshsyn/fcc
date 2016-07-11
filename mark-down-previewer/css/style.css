@@ -1,0 +1,27 @@
+body {
+  background: #333;
+}
+
+.title {
+  color: #fff;
+}
+
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+.container .textarea {
+  border-radius: 10px;
+  background: #ccc;
+  padding: 25px;
+  outline: none;
+}
+
+.previewer {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 25px;
+  min-height: 436px;
+}
