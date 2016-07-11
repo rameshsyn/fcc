@@ -9,3 +9,13 @@ These projects can be found in [codepen](http://codepen.io/collection/AdGoaM/)
 
 #### 2. Pomodoro Clock 
    Pomodoro Clock 
+   
+#### 3. Local Weather app
+   It shows current local weather based on latitude and longitude.  It informs current temperature, weather, wind speed and so on......
+   
+#### 4. Wikipedia viwewer
+   It's wikipedia viewer , it uses wikipedia API .
+
+#### 5. 3D Calculater
+   Simple calculater
+
