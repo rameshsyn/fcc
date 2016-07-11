@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: url(http://i.stack.imgur.com/p9mUO.jpg) no-repeat;
+  background-size: cover;
+}
+
+body {
+  background: none;
+}
+
+.twitch-tv {
+  max-width: 800px;
+  margin: 50px auto 0;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+.twitch-tv h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Sigmar One', cursive;
+  margin: 30px auto 50px;
+}
+
+#hidden {
+  display: none;
+}
+
+#visible {
+  display: block;
+}
+
+.arrow-down {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid;
+}
+
+#arrow-all {
+  border-top-color: #aa0;
+}
+
+#arrow-online {
+  border-top-color: #484;
+}
+
+#arrow-offline {
+  border-top-color: #888;
+}
+
+.head-stuff {
+  height: 60px;
+  margin: 30px 0;
+  width: 780px;
+  padding: 5px 23px;
+}
+.head-stuff div {
+  height: 55px;
+  width: 200px;
+  margin: 0 20px 0;
+  float: left;
+  cursor: pointer;
+}
+.head-stuff h3 {
+  margin: 5px auto 0;
+  height: 45px;
+  width: 190px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+.head-stuff h6 {
+  margin: auto;
+  padding: 0;
+  height: 0;
+  width: 0;
+}
+
+.online {
+  background: #484;
+  color: #eee;
+}
+
+.all {
+  background: #aa0;
+  color: #550;
+}
+
+.offline {
+  background: #888;
+  color: #eee;
+}
+
+.body-stuff {
+  width: 780px;
+  margin: 50px auto;
+  padding: 5px;
+}
+
+.channel {
+  height: 140px;
+  width: 770px;
+  margin: 0 auto 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.channel div {
+  float: left;
+}
+.channel .profile-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 3px auto;
+}
+
+.profile {
+  width: 160px;
+}
+.profile a {
+  color: #fff;
+}
+.profile i {
+  display: block;
+  text-align: center;
+}
+
+.additional-info {
+  width: 390px;
+  padding: 10px;
+  text-align: center;
+}
+.additional-info h5 {
+  margin: 30px auto 0;
+}
+
+.views {
+  background: none;
+  width: 210px;
+  padding: 0 5px 5px;
+}
+.views div {
+  margin: 1px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: 200px;
+  padding: 4px;
+}
+.views .profile-banner {
+  height: 90px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 0 0 3px;
+}
+.views .viewer-img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin: 1px 5px;
+}
+.views .viewers {
+  margin-right: 30px;
+}

@@ -1,0 +1,172 @@
+$tv-width: 800px;
+$online-color: #eee;
+$online-bg: #484 ;
+$offline-color: #555 ;
+$offline-bg: #888;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: url(http://i.stack.imgur.com/p9mUO.jpg) no-repeat;
+  background-size: cover;
+}
+
+body {
+  background: none;
+}
+
+.twitch-tv {
+  max-width: $tv-width;
+  margin: 50px auto 0;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Sigmar One', cursive;
+    margin: 30px auto 50px;
+  }
+}
+#hidden {
+  display: none;
+}
+#visible {
+  display: block;
+}
+.arrow-down {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid;
+}
+#arrow-all {
+  border-top-color: #aa0;
+}
+#arrow-online {
+  border-top-color: $online-bg;
+}
+#arrow-offline {
+  border-top-color: $offline-bg;
+}
+
+
+.head-stuff {
+  height: 60px;
+  margin: 30px 0;
+  width: $tv-width - 20px;
+  padding: 5px 23px;
+  div {
+    height: 55px;
+    width: 200px;
+    margin: 0 20px 0;
+    float: left;
+    cursor: pointer;
+  }
+  h3 {
+    margin: 5px auto 0;
+    height: 45px;
+    width: 190px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+  }
+  h6 {
+    margin: auto;
+    padding: 0;
+    height: 0;
+    width: 0;
+  }
+}
+
+.online {
+  background: $online-bg;
+  color: $online-color;
+}
+
+.all {
+  background: #aa0;
+  color: #550;
+}
+
+.offline {
+  background: $offline-bg;
+  color: $online-color;
+}
+
+.body-stuff {
+  width: $tv-width - 20px;
+  margin: 50px auto;
+  padding: 5px;
+}
+
+.channel {
+  height: 140px;
+  width: $tv-width - 30px;
+  margin: 0 auto 20px;
+  padding: 5px;
+  border-radius: 10px;
+  div {
+    float: left;
+  }
+  .profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 3px auto ;
+    
+  }
+}
+
+.profile {
+  width: 160px;
+  a {
+    color: #fff;
+  }
+  i {
+    display: block;
+    text-align: center;
+    
+  }
+  
+}
+
+.additional-info {
+  width: 390px;
+  padding: 10px;
+  text-align: center;
+  h5 {
+    margin: 30px auto 0;
+  }
+
+}
+
+.views {
+  background: none;
+  width: 210px;
+  padding: 0 5px 5px;
+  div {
+    margin: 1px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 200px;
+    padding: 4px;
+  }
+  .profile-banner {
+    height: 90px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 0 0 3px;
+  }
+  .viewer-img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 1px 5px;
+  }
+  .viewers {
+    margin-right: 30px;
+  }
+}
