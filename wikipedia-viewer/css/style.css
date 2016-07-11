@@ -1,0 +1,72 @@
+html {
+  background: url(https://pixabay.com/static/uploads/photo/2016/04/12/10/55/blossom-1324088_960_720.jpg) no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+body {
+  background: none;
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  margin: 40px;
+  font-size: 64px;
+font-family: 'Chewy', cursive;
+}
+
+.search-area {
+  height: 100px;
+  width: 790px;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+input {
+  border: 2px solid #fff;
+  border-radius: 40px;
+  height: 75px;
+  width: 600px;
+  outline: none;
+  padding: 20px;
+  background: none;
+  font-size: 28px;
+}
+
+i {
+  width: 50px;
+  height: 60px;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.search {
+  position: relative;
+  left: -90px;
+  color: white;
+  cursor: pointer;
+}
+
+.result-area {
+  width: 800px;
+  height: auto;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.result-area a {
+  text-decoration: none;
+  color: none;
+}
+
+.result {
+  width: 780px;
+  height: auto;
+  margin: 20px auto;
+  background: #fff;
+  padding: 10px 30px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: black;
+  opacity: 0.7;
+}
