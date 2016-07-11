@@ -1,0 +1,113 @@
+// Coded By Ramesh Syangtan @rameshsyn
+
+var App = React.createClass({
+  getInitialState: function() {
+    return {
+      search: '',
+      data: [],
+      arrowRecent: true
+    }
+  },
+  loadData: function(url = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent') {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({
+          data: data
+        });
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(this)
+    });
+
+  },
+  componentDidMount: function() {
+    this.loadData(this.state.dataUrl);
+
+  },
+  updateDataUrl: function(url, opt) {
+    this.loadData(url);
+    if (opt) {
+      this.setState({
+        arrowRecent: true
+      });
+    } else {
+      this.setState({
+        arrowRecent: false
+      });
+    }
+  },
+  updateSearch: function(event) {
+    this.setState({
+      search: event.target.value
+    });
+
+  },
+  render: function() {
+    let recent, alltime;
+    let filteredCamper = this.state.data.filter((camper) => {
+      return camper['username'].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+    });
+    (this.state.arrowRecent) ? recent = "arrow-down": alltime = "arrow-down";
+    return (
+      <div className="panel panel-success">
+    <div className="panel-heading">
+      <b>Camper Leaderboard </b>
+      
+    </div>
+    <div className="panel-body">
+      <table className="table table-responsive table-bordered table-hover">
+      <thead>
+        <tr>
+          <td colSpan="4">
+          <span className="search-area">
+        <input type="text" className="search" placeholder="Search camper" value={this.state.search} onChange= {this.updateSearch.bind(this)} />
+        <i className="search-icon glyphicon glyphicon-search"></i>
+      </span>
+          
+          
+          </td>
+          </tr>
+        <tr>
+          <th># SN</th>
+          <th>Campers </th>
+          <th onClick={ this.updateDataUrl.bind(this,'https://fcctop100.herokuapp.com/api/fccusers/top/recent',true) } ><div className="options">Recent (30 Days)</div><div className={recent}></div></th>
+          <th onClick={ this.updateDataUrl.bind(this,'https://fcctop100.herokuapp.com/api/fccusers/top/alltime',false) }><div  className="options">All the time</div><div className={alltime}></div></th>
+        </tr>
+      </thead>
+      <tbody>
+        {           
+          filteredCamper.map((camper,index) => {
+            return (<Camper camper={camper} sn={index + 1}/>)
+          })            
+         }
+      </tbody>    
+    </table>
+    
+    </div>
+  </div>
+
+    );
+  }
+});
+
+var Camper = React.createClass({
+  render: function() {
+    return (
+      <tr>
+          <td>{this.props.sn}</td>
+          <td className="text-left">   
+            
+            <img className="camper-img" src={this.props.camper['img']}/><a href={"https://freecodecamp.com/" + this.props.camper['username']} target="_blank">{this.props.camper['username']}</a></td>
+          <td>{this.props.camper['recent']}</td>
+          <td>{this.props.camper['alltime']}</td>
+        </tr>
+
+    )
+  }
+
+});
+ReactDOM.render(<App/>, document.getElementById('app'));
