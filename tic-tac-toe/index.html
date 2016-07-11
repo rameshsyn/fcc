@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe - FCC</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="play-ground">
+  <div class="line animated flash"></div>
+  <div class="boxes">
+    <div class="row first-row">
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t0"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t1"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t2"></div>
+    </div>
+    <div class="row second-row">
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t3"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t4"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t5"></div>
+    </div>
+    <div class="row third-row">
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t6"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t7"></div>
+      <div class="col-md-4 col-sm-4 col-xs-4 ttt" id="t8"></div>
+    </div>
+  </div>
+</div>
+<div class="prompt-bg" id="prompt-bg">
+  <div class="prompt-choose animated zoomIn" id="prompt-choose">
+    <h1>Tic Tac Toe</h1>
+    <hr/>
+    <div>
+      <img class="img-responsive" src="http://www.animatedimages.org/data/media/118/animated-robot-image-0014.gif">
+      <h1> X or O ?</h1>
+    </div>
+    <div class="click-area animated" id="click-area">
+      <button class="btn btn-primary" id="btn-x" value="X">X</button>
+      <button class="btn btn-success" id="btn-o" value="O">O</button>
+    </div>
+  </div>
+</div>
+<div class="show-container">
+  <div class="show-status" id="show-status"></div>
+</div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
