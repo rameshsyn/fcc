@@ -1,0 +1,238 @@
+// Coded By Ramesh Syangtan @rameshsyn
+
+var  Modal = ReactBootstrap.Modal,  // Modal component of React - Bootstrap
+     editClickValue = false,
+     recipeData;
+
+// Local Storage checker
+function storageAvailable(type) {
+  try {
+    var storage = window[type],
+      x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+// Checking Local storage in user browser
+// True: checks user added recipes
+//       True: saves user added recipes in recipeData Array
+//       False: Sets some Recipes in recipeData Array
+// False: alerts - No local storage supports
+if (storageAvailable('localStorage')) {
+  if (localStorage.getItem('rameshsyn_recipes')) {
+    recipeData = (JSON.parse(localStorage.getItem('rameshsyn_recipes')));  
+  } else {
+    recipeData = [{
+      "name": "Momo",
+      "gradient": ["Meat", "veg", "Sup", "Maida", "Tomato"]
+    }, {
+      "name": "Khir",
+      "gradient": ["Milk", "Sugar", "Cocunot", "Rice", "Sukamel"]
+    }];
+  }
+} else {
+  alert("Sorry, Your Browser doesn't support Local Storage :D ");
+}
+
+// Updates changes like edit, delete , add recipes
+function updateChanges() {
+  recipeData = JSON.parse(localStorage.getItem('rameshsyn_recipes'));
+  ReactDOM.render(<App data={recipeData} />, document.getElementById('app'));
+}
+
+
+function editClick(value) {
+  editClickValue = value;
+}
+
+// A parent react component (App)
+var App = React.createClass({
+  getInitialState: function() {
+    return {
+      recipes: this.props.data
+    }
+  },
+  editClick: function() {
+    editClick(false);
+  },
+  render: function() {
+    return (
+      <div className="container-fluid">
+          <h1 className="app-title">Recipe Box</h1>
+          <div className="container">
+            <div title='Add New Recipe' className='glyphicon glyphicon-plus add-recipe pull-right' onClick={this.editClick.bind(this)}>
+              <AddEdit data={this.state.recipes} />
+            </div>
+            <div className="container recipe-box">
+              {
+                this.state.recipes.map((recipe,i) => {
+                  return <Recipe data={this.state.recipes} name={recipe['name']} gradient={recipe['gradient']}  id={i} />;
+                })
+              }
+            </div>
+          </div>
+        </div>
+    );
+  }
+});
+
+var Recipe = React.createClass({
+
+  getInitialState: function() {
+    return {
+      showModal: false,
+    };
+  },
+
+  close: function() {
+    this.setState({
+      showModal: false
+    });
+  },
+  open: function() {
+    this.setState({
+      showModal: true
+    });
+  },
+  removeRecipe: function(event) {
+    let recipeId = event.target.id;
+    this.props.data.splice(recipeId, 1);
+    localStorage.setItem('rameshsyn_recipes', JSON.stringify(this.props.data));
+    updateChanges();
+    this.setState({
+      showModal: false
+    });
+
+  },
+  editClick: function() {
+    editClick(true);
+  },
+  render: function() {
+    return (
+      <div className="recipe" id={this.props.id}>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <div className="modal-content">
+            <div className="modal-header">
+            <button type="button" className="close" onClick={this.close}><span aria-hidden="true">&times;</span></button>
+            <h4 className="modal-title">Confirm Delete ! </h4>
+          </div>
+          
+          <div className="modal-footer">        
+            <button type="button" className="btn btn-danger"  id={this.props.id} onClick={this.removeRecipe}>Confirm</button>
+            <button type="button" className="btn btn-success" onClick={this.close}>Cancel</button>
+          </div>
+            </div>
+        </Modal>
+      <h3>
+        {this.props.name}
+        <i title='Remove Recipe' className="glyphicon glyphicon-remove pull-right remove-recipe" id={this.props.id} onClick={this.open}></i>
+        </h3>
+      <hr/>
+      <div title='Ingradients' className="gradient"> 
+        {
+          this.props.gradient.map((gradient) => {
+            return <span>{gradient}</span>
+          })
+        }
+      </div>
+      <hr/>
+      <div title='Edit Recipe' className='glyphicon glyphicon-edit edit' id={this.props.id} onClick={this.editClick.bind(this)}>
+        <AddEdit data={this.props.data} id={this.props.id} show={true}/>
+        </div>    
+    </div>
+    )
+  }
+});
+
+var AddEdit = React.createClass({
+
+  getInitialState: function() {
+    return {
+      showModal: false
+    };
+  },
+
+  close: function() {
+    this.setState({
+      showModal: false
+    });
+  },
+  open: function() {
+    this.setState({
+      showModal: true
+    });
+  },
+  getInput: function getInput(event) {
+    event.preventDefault();
+    var data = this.props.data;
+    var recipes = undefined;
+    var name = $('#name').val();
+    if (name === "") name = "untitiled";
+    var gradient = $('#gradient').val().split(',');
+    var recipeId = event.target.id;
+    var recipe = {
+      name,
+      gradient
+    };
+    if (editClickValue) {
+      data.splice(recipeId, 1, recipe);
+      editClick(false);
+    } else {
+      data.push(recipe);
+    }
+    localStorage.setItem('rameshsyn_recipes', JSON.stringify(data));
+    updateChanges();
+    this.setState({
+      showModal: false
+    });
+  },
+  render: function() {
+    let title = "Add New Recipe";
+    let action = "Add New Recipe";
+    let actionClass = "glyphicon glyphicon-plus add-recipe pull-right";
+    let recipeId, name, gradient;
+    if (editClickValue) {
+      recipeId = this.props.id;
+      name = this.props.data[recipeId]['name'];
+      gradient = this.props.data[recipeId]['gradient'];
+      title = "Edit Recipe";
+      action = "Edit";
+    }
+    return (
+      <div>        
+        <i className='add-edit'  onClick={this.open}></i>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" className="close" onClick={this.close}>
+                <span aria-hidden="true">&times;</span>
+              </button>
+             <h4 className="modal-title">{title}</h4>
+           </div>
+          <div className="modal-body">
+           <form>
+           <div className="form-group">
+              <label for="name" className="control-label">Name:</label>
+              <input type="text" className="form-control" id="name" defaultValue={name} placeholder="Recipe Name"/>
+            </div>         
+            <div className="form-group">
+              <label for="gradient" className="control-label">Gradients:</label> 
+              <textarea className="form-control" id="gradient" defaultValue={gradient} placeholder="Separated by comma ...."></textarea>
+            </div>          
+          </form>
+        </div>
+        <div className="modal-footer">        
+          <button type="button" className="btn btn-success" onClick={this.getInput} id={this.props.id}>{action}</button>
+          <button type="button" className="btn btn-danger" onClick={this.close}>Close</button>
+        </div>
+      </div>
+    </Modal>
+ </div>
+    );
+  }
+});
+
+ReactDOM.render(<App data={recipeData} />, document.getElementById('app'));

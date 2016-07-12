@@ -1,0 +1,99 @@
+$recipe-width: 350px;
+body {
+  background: #345;
+}
+
+.app-title {
+  text-align: center;
+  margin: 50px auto;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 5px 5px #35D;
+}
+
+.add-edit {
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 8px;
+}
+
+.add-recipe {
+  cursor: pointer;
+  font-size: 300%;
+  color: #fff;
+  background: #233;
+  border-radius: 5px;
+  padding: 16px 30px;
+  transition: color 1s;
+}
+
+.add-recipe:hover {
+  color: green;
+}
+
+.recipe-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background: #233;
+  padding: 15px;
+  color: #fff;
+  min-width: 400px;
+}
+
+.recipe {
+  width: $recipe-width;
+  min-height: 200px;
+  background: #071625;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  color: #fff;
+  h3 {
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+    i {
+      margin-right: 10px;
+      color: #F05;
+    }
+  }
+  hr {
+    color: #fff;
+    margin: 15px auto 3px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+  }
+  .gradient {
+    padding: 2px;
+    min-height: 100px;
+    span {
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 5px 7px;
+      margin: 8px;
+      font-size: 15px;
+      display: inline-block;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.edit {
+  height: 50px;
+  width: 50px;
+  margin: 0 0 0 250px;
+  cursor: pointer;
+  font-size: 300%;
+  color: #337ab7;
+  transition: color 1s;
+}
+
+.edit:hover {
+  color: green;
+}
+
+.remove-recipe {
+  cursor: pointer;
+}
