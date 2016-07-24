@@ -1,0 +1,258 @@
+/*
+ Coded by Ramesh Syangtan @rameshsyn || @ramesh_syn
+
+		======= SIMON =========
+ 		======= GAME ==========
+*/
+var tonePlayInterval, simonTimeOut; // setInterval global variables
+class Simon extends React.Component {
+  constructor() {
+      super();
+      this.state = {
+        simonOn: false,
+        strict: false,
+        random: false,
+        colors: ['#1d4c1d', '#902828', '#868612', '#131a50'],
+        colorHighlights: ['green', 'red', 'yellow', 'blue'],
+        randomTones: [],
+        toneSeriesCount: 0,
+        level: 0,
+        tones: [
+          new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+          new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+          new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+          new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+        ]
+      }
+    }
+    // Initialization
+  init() {
+      clearInterval(tonePlayInterval);
+      clearInterval(simonTimeOut);
+      this.setState({
+        randomTones: [],
+        level: 0,
+        toneSeriesCount: 0,
+        random: false
+
+      }, function() {
+        // Pushing random tone on callback
+        this.state.randomTones.push(this.randomTone());
+      });
+      this.toneButtonClickable(false);
+    }
+    // Generates random Tone
+  randomTone() {
+      return Math.floor(Math.random() * 4);
+    }
+    // Strict Mode
+  strict() {
+      if (this.state.strict) {
+        this.setState({
+          strict: false
+        });
+        $("#strict").css('color', '#fff');
+      } else {
+        this.setState({
+          strict: true
+        });
+        $("#strict").css('color', 'green');
+
+      }
+    }
+    // 5 Seconds Timer
+  timer() {
+      clearInterval(simonTimeOut);
+      let second = 0;
+      simonTimeOut = setInterval(timeOut.bind(this), 1000);
+
+      function timeOut() {
+        if (second === 5) {
+          if (this.state.strict) {
+            this.start();
+            $("#s-buttons").addClass("alert-flash");
+            this.toneButtonClickable(false);
+            this.state.tones[3].play();
+          } else {
+            this.wrongInput();
+          }
+          clearInterval(simonTimeOut);
+        } else {
+          second++;
+        }
+      }
+    }
+    // Plays and sets correspoding tone and color respectively
+  correspondToneColor(id) {
+      this.state.tones[id].play();
+      $("#" + id.toString()).css("background", this.state.colorHighlights[id]);
+      // turns background color to initial state after one second
+      setTimeout(function() {
+        $("#" + id.toString()).css("background", this.state.colors[id]);
+      }.bind(this), 700);
+    }
+    // Plays tone Automatically
+  playTone() {
+      let toneSeriesId = this.state.randomTones[this.state.toneSeriesCount];
+      this.correspondToneColor(toneSeriesId);
+      this.timer();
+      // Go to next step
+      if (this.state.toneSeriesCount + 1 === this.state.randomTones.length) {
+        clearInterval(tonePlayInterval);
+        this.toneButtonClickable(true);
+        this.setState({
+          toneSeriesCount: 0
+        });
+      } else { // wait , i am not finished yet
+        this.setState({
+          toneSeriesCount: this.state.toneSeriesCount + 1
+        });
+      }
+    }
+    // user: Do as i do 
+  userPlay(event) {
+      let toneId = event.target.id;
+      // Go random
+      if (this.state.random) {
+        this.correspondToneColor(toneId);
+      } else {
+
+        let toneSeriesId = this.state.randomTones[this.state.toneSeriesCount];
+        this.timer();
+        $("#s-buttons").removeClass("alert-flash");
+        // Wrong input ? Computer: I will repeat this
+        if (Number(toneId) !== toneSeriesId) {
+          if (this.state.strict) {
+            this.start();
+            $("#s-buttons").addClass("alert-flash");
+            this.toneButtonClickable(false);
+            this.state.tones[3].play();
+          } else {
+            this.wrongInput();
+          }
+          return false;
+        }
+        // Computer: Are you done ? Go to next level
+        else if (this.state.toneSeriesCount + 1 === this.state.randomTones.length) {
+          this.setState({
+            toneSeriesCount: 0
+          });
+          this.toneButtonClickable(false);
+          this.setState({
+            level: this.state.level + 1
+          });
+          if (this.state.level === 20) {
+            alert("Congratulation, It's Victory !!!");
+          }
+          this.state.randomTones.push(this.randomTone());
+          this.repeatThis();
+        } else {
+          this.setState({
+            toneSeriesCount: this.state.toneSeriesCount + 1
+          });
+        }
+        this.correspondToneColor(toneId);
+      }
+    }
+    // I am repeater
+  repeatThis() {
+      tonePlayInterval = setInterval(function() {
+        this.playTone();
+        $("#s-buttons").removeClass('alert-flash');
+      }.bind(this), 1500);
+    }
+    // Let's start
+  start() {
+      this.init();
+      $("#start").css('color', 'green');
+      $("#random").css('color', '#fff');
+      this.toneButtonClickable(false);
+      this.repeatThis();
+    }
+    // I warn you not to input wrong
+  wrongInput() {
+      $("#s-buttons").addClass("alert-flash");
+      this.toneButtonClickable(false);
+      this.state.tones[3].play();
+      this.setState({
+        toneSeriesCount: 0
+      });
+      this.repeatThis();
+    }
+    // Let me be what these fucking guys say
+  toneButtonClickable(value) {
+      if (value) {
+        $("#0,#1,#2,#3").removeClass("unclickable");
+      } else {
+        $("#0,#1,#2,#3").addClass("unclickable");
+      }
+    }
+    // Computer: Wanna play random ? It's your time
+  playRandom() {
+      this.init();
+      this.toneButtonClickable(true);
+      $("#start").css('color', '#fff');
+      if (this.state.random) {
+        this.setState({
+          random: false
+        });
+        $("#random").css('color', '#fff');
+      } else {
+        this.setState({
+          random: true
+        });
+        $("#random").css('color', 'green');
+      }
+    }
+    // Live Or die
+  onOff(event) {
+    this.init();
+    (this.state.simonOn) ? this.setState({
+      simonOn: false
+    }): this.setState({
+      simonOn: true
+    });
+    if (this.state.simonOn) {
+      $("#random,#strict,#start").removeClass("unclickable");
+      $("#onOff").css("color", "green");
+
+    } else {
+      $("#random,#strict,#start").addClass("unclickable");
+      $("#onOff").css("color", "#fff");
+    }
+    this.toneButtonClickable(false);
+    $("#start").css('color', '#fff');
+  }
+  componentDidMount() {
+    this.onOff();
+  }
+  render() {
+    return (
+      <div className="simon">
+			<div className="s-on-off"   onClick={this.onOff.bind(this)}>
+			<i className="fa fa-power-off fa-3x" id="onOff" aria-hidden="true" title="Switch on/off"></i>
+			</div>
+			<div className="s-controls">
+			<div className="s-info" id="info" title="Level">{this.state.level}</div>
+			<div className="controls">
+			<i className="fa fa-random fa-2x" aria-hidden="true" id="random" title="Play Random" onClick={this.playRandom.bind(this)}></i>
+			<i className="fa fa-ban fa-2x" aria-hidden="true" id="strict" title="Strict" onClick={this.strict.bind(this)}></i>
+
+			</div>
+			</div>
+			<div className="s-buttons" id="s-buttons">
+			<div className="top-left" id="0" onMouseDown={this.userPlay.bind(this)}></div>
+			<div className="top-right" id="1" onMouseDown={this.userPlay.bind(this)}></div>     
+			<div className="btm-left" id="2" onMouseDown={this.userPlay.bind(this)}></div>
+			<div className="btm-right" id="3" onMouseDown={this.userPlay.bind(this)} ></div>
+			<div className="center">
+			<i className="fa fa-play-circle-o fa-4x" aria-hidden="true" id="start" title="Start" onClick={this.start.bind(this)}></i>
+			</div>
+			</div>
+
+			</div>
+    )
+  }
+}
+
+ReactDOM.render(<Simon />, document.getElementById('simon'));
