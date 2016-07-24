@@ -57,5 +57,7 @@ These projects can be found in [codepen](http://codepen.io/collection/AdGoaM/)
    A simple App ,   added recipes will be stored in local storage , can be edited, deleted, added new.
 #####    Tools used: React, React-bootstrap, SCSS, Babel, Jquery
 
-   
+#### 10. Simon Game
+   Do as simon says, Boost your memory power
+#####    Tools used: React, SCSS, Babel, Font-Awesome, CSS3, Jquery
 
