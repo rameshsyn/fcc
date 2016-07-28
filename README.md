@@ -61,3 +61,6 @@ These projects can be found in [codepen](http://codepen.io/collection/AdGoaM/)
    Do as simon says, Boost your memory power
 #####    Tools used: React, SCSS, Babel, Font-Awesome, CSS3, Jquery
 
+#### 11. Wikipedia viewer
+   An app to view wikipedia article
+#####    Tools used: wikipedia opensearch API, Jquery
