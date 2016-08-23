@@ -64,3 +64,7 @@ These projects can be found in [codepen](http://codepen.io/collection/AdGoaM/)
 #### 11. Wikipedia viewer
    An app to view wikipedia article
 #####    Tools used: wikipedia opensearch API, Jquery
+
+#### 12. Bar Chart
+   United state Gross domestic product bar chart
+#####    Tools used: D3, Jquery, US GDP data
