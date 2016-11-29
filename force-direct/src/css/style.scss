@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #51634c;
+	padding: 0;
+	margin: 0
+}
+
+.chart {
+	height: 700px;
+	width: 1000px;
+	margin: 10px auto;
+	position: relative;
+	svg {
+		background: #1d2327;	
+		box-shadow: 6px 6px 10px #25213c;
+		border-radius: 5px;
+
+	}
+	img {
+		position: absolute;
+
+	}
+	div {
+		position: absolute;
+		z-index: 1;
+		background: white;
+		color: black;
+		padding: 3px;
+		border-radius: 5px;
+		opacity: 0;
+	}
+	
+}
+h1 {
+		text-align: center;
+		color: white;
+	}
