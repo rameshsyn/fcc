@@ -23,13 +23,11 @@ Here is my [FreeCodeCamp portfolio](https://www.freecodecamp.com/rameshsyn)
    * [Force directed graph](https://rameshsyangtan.com.np/fcc/data-biz/force-direct)  
 
 ### 3. Back End     
-   #### API and Micro services
    * [Image Search Abstraction layer](https://search-imgg.herokuapp.com/)
    * [Url-shortener](https://bit-url.herokuapp.com/)
    * [File Meta data](https://md-ms.herokuapp.com/)
    * [Header parser](https://header-parser-ms.herokuapp.com/api/whoami)
    * [Time stamp](https://timestamp-mi.herokuapp.com/)  
 
-   #### Full stack 
 
 
