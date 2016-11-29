@@ -76,7 +76,7 @@ $(document).ready(function() {
         $("#s-time").text(this.SCountDown);
         $("#b-time").text(this.BCountDown);
         $("#cd-time").text("25 : 00");
-        $("#start-stop img").attr('src', 'http://cdn.flaticon.com/png/256/16630.png');
+        $("#start-stop img").attr('src', '../img/pp.png');
         $("#arrow-s").removeClass('arrow-down');
         $("#arrow-b").removeClass('arrow-down');
         $("#progress").css("background", "none");
@@ -120,14 +120,14 @@ $(document).ready(function() {
   function start() {
     session = false;
     pomodoro.start();
-    $("#start-stop img").attr('src', 'http://lunchmoneymusic.com/public/img/pause.svg');
+    $("#start-stop img").attr('src', './img/p.png');
     $(".customize").addClass('unclickable');
   }
 
   function stop() {
     session = true;
     pomodoro.stop();
-    $("#start-stop img").attr('src', 'http://cdn.flaticon.com/png/256/16630.png');
+    $("#start-stop img").attr('src', './img/pp.png');
     $(".customize").removeClass('unclickable');
   }
 
