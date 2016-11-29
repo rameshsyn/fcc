@@ -1,0 +1,9 @@
+.url-short {
+    height: auto;
+    min-width: 600px;
+    background: #000;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    color: #fff;
+}
