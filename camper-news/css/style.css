@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+html {
+  background: url(https://static.pexels.com/photos/34435/pexels-photo.jpg) gray no-repeat fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: none;
+}
+
+.header {
+  font-family: indie flower, sans-serif;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 60px;
+  margin-top: 50px;
+}
+
+.header h2 {
+  font-family: sans-serif;
+  font-size: 40px;
+}
+
+.news-container {
+  margin-top: 50px;
+}
+
+.news {
+  margin: 13px;
+  height: 280px;
+  width: 200px;
+  background: #bbb;
+  border-radius: 7px;
+  float: left;
+}
+
+.news .news-img {
+  height: 175px;
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+.meta {
+  background: none;
+  padding: 3px;
+  overflow: auto;
+}
+
+.meta h4 {
+  background: #aaa;
+  margin: -1px auto 1px;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.upvotes img {
+  height: 25px;
+  width: 25px;
+  margin: 2px 4px 0;
+}
+
+.news-by {
+  background: #bbb;
+  width: 195px;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.news-by .user {
+  padding: 2px;
+  margin: 0;
+}
+
+.news-by .user-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  display: block;
+}
+
+.time-posted {
+  display: block;
+  width: 195px;
+  border-radius: 3px;
+  margin: 2px auto;
+  color: #555;
+}
