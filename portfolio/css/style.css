@@ -1,0 +1,145 @@
+html {
+  background: url(http://i66.tinypic.com/2csgwf6.jpg) no-repeat fixed center;
+  background-size: cover;
+}
+
+body,
+header,
+main,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: none;
+}
+
+
+/* Main */
+
+main {
+  margin-top: 50px;
+}
+
+
+/* About section */
+
+.about {
+  margin: 150px 0px 0px;
+}
+
+.about img {
+  height: 200px;
+  width: 200px;
+  margin: 15px auto 0px;
+  transition: transform 1s;
+}
+
+.about img:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.about p {
+  background: white;
+  margin: 50px 5px ;
+  padding: 15px;
+  opacity: 0.6;
+  color: #000;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 25px;
+  word-spacing: 5px;
+}
+
+
+/* Portfolio section */
+
+.portfolio {
+  background: url(http://rameshsyangtan.com.np/img/bg-10-full.jpg) no-repeat;
+  margin: 100px 0px 0px;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+
+.portfolio .row {
+  margin: 40px 0px 0px;
+}
+
+.portfolio .pf-title {
+  color: #444;
+  text-align: center;
+  text-shadow: 3px 3px gray;
+}
+
+.portfolio .pf-item img {
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  transition: transform 1s;
+}
+
+.portfolio .pf-item img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.portfolio h4 {
+  display: none;
+  width: 230px;
+  padding: 10px;
+  text-align: center;
+  margin: -90px 10px 55px;
+  color: #444;
+}
+
+
+/*Contact section*/
+
+.contact {
+  background: url(http://rameshsyangtan.com.np/img/bg-9-full.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  margin: 50px 0px 0px;
+  padding: 20px;
+}
+
+.contact .row {
+  margin: 50px 0 0;
+}
+
+.contact .c-title {
+  color: #ccc;
+  text-align: center;
+  text-shadow: 3px 3px gray;
+}
+
+.contact img {
+  height: 137px;
+  width: 137px;
+  border: 7px dotted #ccc;
+  margin: 5px;
+  transition: border 1s;
+}
+
+.contact img:hover {
+  border: #00CC66 dotted 7px;
+}
+
+
+/* Footer */
+
+footer {
+  background: #333;
+  margin: 30px 0 0;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+footer h3 {
+  text-align: center;
+  color: white;
+}
