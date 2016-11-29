@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	background: #925656;
+}
+.heatmap {
+	background: #3b543b;
+	margin: 10px auto;
+	height: 650px;
+	width: 1000px;
+	padding: 1px 0;
+	.title {
+		margin: 18px auto;
+		text-align: center;
+		color: white;
+	}
+	svg {
+		display: block;
+		margin: auto;
+		.y-axis {
+		  path {
+		  	stroke: none;		  	
+		  }
+		  g line {
+		  		stroke: none;
+		  	}
+		  g text {
+		  	fill: white;
+		  	font-size: 18px;
+		  }
+
+		}
+		.x-axis {
+			g text {
+				fill: white;
+				font-size: 15px;
+			}
+		}
+
+	}
+	.tooltip {
+		position: absolute;
+		height: 60px;
+		max-width: 150px;
+		text-align: center;
+		padding: 5px;
+		background: black;
+		border-radius: 5px;
+		color: white;
+	}
+
+}
