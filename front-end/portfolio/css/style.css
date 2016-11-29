@@ -1,5 +1,5 @@
 html {
-  background: url(http://i66.tinypic.com/2csgwf6.jpg) no-repeat fixed center;
+  background: url(../img/bg.jpg) no-repeat fixed center;
   background-size: cover;
 }
 
@@ -56,7 +56,6 @@ main {
 /* Portfolio section */
 
 .portfolio {
-  background: url(http://rameshsyangtan.com.np/img/bg-10-full.jpg) no-repeat;
   margin: 100px 0px 0px;
   background-size: cover;
   width: 100%;
@@ -98,7 +97,6 @@ main {
 /*Contact section*/
 
 .contact {
-  background: url(http://rameshsyangtan.com.np/img/bg-9-full.jpg) no-repeat;
   background-size: cover;
   width: 100%;
   height: auto;
