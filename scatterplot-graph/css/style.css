@@ -1,0 +1,29 @@
+body {
+  background: #6b4e2a;
+}
+.container {
+  position: relative;
+}
+.canvas {
+  display: block;
+  height: 600px;
+  width: 800px;
+  margin: 60px auto;
+  color: #fff;
+}
+.tooltip {
+  display: none;
+  position: absolute;
+  left: 609px;
+  top: 30px;
+  height: auto;
+  width: 215px;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left;
+
+}
+.axis-title {
+  font-size: 24px;
+}
