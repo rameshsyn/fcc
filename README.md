@@ -21,6 +21,7 @@ Here is my [FreeCodeCamp portfolio](https://www.freecodecamp.com/rameshsyn)
    * [Scatter Plot Graph](https://rameshsyangtan.com.np/fcc/data-biz/scaterplot-graph)
    * [Heatmap - Global Land surface temperature](https://rameshsyangtan.com.np/fcc/data-biz/heatmap)
    * [Force directed graph](https://rameshsyangtan.com.np/fcc/data-biz/force-direct)  
+   * [Game of life](https://rameshsyangtan.com.np/fcc/data-biz/game-of-life)
 
 ### 3. Back End     
    * [Image Search Abstraction layer](https://search-imgg.herokuapp.com/)
