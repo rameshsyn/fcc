@@ -3,14 +3,14 @@ const config = {
 	entry: './src/js',
 	devtool: 'eval',
 	output: {
-		path: resolve(__dirname, 'dist'),
+		path: __dirname,
 		filename: 'bundle.js',
 		//publicPath: __dirname
 	},
 	devServer: {
 		inline: true,
 		port: 3000,
-		contentBase: resolve(__dirname, 'dist')
+		contentBase: __dirname
 	},
 	module: {
 		loaders: [
