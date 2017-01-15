@@ -15,7 +15,7 @@
 
 */
 
-import 'font-awesome/css/font-awesome.min.css';
+//import 'font-awesome/css/font-awesome.min.css';
 import '../style/style.scss';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
