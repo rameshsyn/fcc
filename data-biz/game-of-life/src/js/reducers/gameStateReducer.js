@@ -5,7 +5,7 @@ import { UPDATE_GENERATION } from '../actions/actionTypes';
 
 const gameState = {
 	generation: 0,
-	speed: 100, // delay 
+	speed: 100, // new board creation delay 
 	colors: {
 		dead: '#000',
 		live: 'green',

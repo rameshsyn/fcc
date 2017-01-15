@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'; 
 import  Board  from './boardReducer';
 import GameState from './gameStateReducer';
 

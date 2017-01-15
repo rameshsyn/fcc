@@ -1,3 +1,28 @@
+/*
+		TECHNICAL PROGRAM FLOW. 
+
+		1.  As program starts, setInterval in componentDidMount() calls 
+				drawCellsOnCanvas() , which then sets up canvas board and
+				calls neighbors()  on each cell iteration. 
+
+		2. neighbors() calls following functions. 
+			 - correspondingCell() : It calculates cells' neighbor 
+			 												 and corresponding neighbor.
+			 - liveNeighborsCount() : Counts alive neighbors and returns it. 
+			 - checkLiveOrDead() : It determines cell's fate based on game 
+														 of life rules and calls updator() to update 
+														 cell's status. 
+		3. 	updator() pushes cell's status on new array "newBoard". 
+		
+		4. 	After completion of these steps on every cells. drawCellsOnCanvas() 
+				calls redux's action creator "updateCells()" to update new board to 
+				store.
+
+		5. and assigns newBoard to empty array. 
+	
+*/
+
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -278,7 +303,6 @@ class App extends Component {
 					this.updateGeneration(this.state.generation + 1);
 					this.drawCellsOnCanvas();
 				}, speed);
-		
 
 		this.setState({
 			interval

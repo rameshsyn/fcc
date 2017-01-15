@@ -42,7 +42,7 @@ for(let i = 0; i < verticalCells; i++) {
 		cells.push({
 			index: cellIndex,
 			coords: [x,y],
-			status: Math.random() > 0.7 ? 'live' : 'dead' // random live cell
+			status: Math.random() > 0.7 ? 'live' : 'dead' // random 30% live cell
 		});		
 				
 	}		
