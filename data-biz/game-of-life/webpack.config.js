@@ -3,14 +3,14 @@ const config = {
 	entry: './src/js',
 	devtool: 'eval',
 	output: {
-		path: __dirname,
+		path: resolve(__dirname, 'dist'),
 		filename: 'bundle.js',
-		//publicPath: __dirname
+		publicPath: resolve(__dirname, 'dist')
 	},
 	devServer: {
 		inline: true,
 		port: 3000,
-		contentBase: __dirname
+		contentBase: resolve(__dirname, 'dist')
 	},
 	module: {
 		loaders: [
@@ -29,23 +29,23 @@ const config = {
 		},
 		{
 			test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'url?limit=10000&mimetype=application/font-woff'
+			loader: 'url?name=/fonts/[hash].[ext]&limit=10000&mimetype=application/font-woff'
 		},
 		{
 			test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'url?limit=10000&mimetype=application/font-woff'
+			loader: 'url?name=/fonts/[hash].[ext]&limit=10000&mimetype=application/font-woff'
 		},
 		{
 			test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'url?limit=10000&mimetype=application/octet-stream'
+			loader: 'url?name=/fonts/[hash].[ext]&limit=10000&mimetype=application/octet-stream'
 		},
 		{
 			test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'file'
+			loader: 'file?publicPath=./&name=/fonts/[hash].[ext]'
 		},
 		{
 			test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'url?limit=10000&mimetype=image/svg+xml'
+			loader: 'url?name=/fonts/[hash].[ext]&limit=10000&mimetype=image/svg+xml'
 		}
 		]
 	}

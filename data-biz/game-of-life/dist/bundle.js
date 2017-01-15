@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/home/rameshsyn/projects/playground/game-of-life/dist";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -66,39 +66,39 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	eval("module.exports = __webpack_require__.p + \"674f50d287a8c48dc19ba404d20fe713.eot\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0\n// module id = 4\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.eot?");
+	eval("module.exports = \".//fonts/674f50d287a8c48dc19ba404d20fe713.eot\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0\n// module id = 4\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.eot?");
 
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	eval("module.exports = __webpack_require__.p + \"674f50d287a8c48dc19ba404d20fe713.eot\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.eot\n// module id = 5\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.eot?");
+	eval("module.exports = \".//fonts/674f50d287a8c48dc19ba404d20fe713.eot\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.eot\n// module id = 5\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.eot?");
 
 /***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = __webpack_require__.p + \"af7ae505a9eed503f8b8e6982036873e.woff2\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0\n// module id = 6\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.woff2?");
+	eval("module.exports = __webpack_require__.p + \"/fonts/af7ae505a9eed503f8b8e6982036873e.woff2\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0\n// module id = 6\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.woff2?");
 
 /***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = __webpack_require__.p + \"fee66e712a8a08eef5805a46892932ad.woff\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0\n// module id = 7\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.woff?");
+	eval("module.exports = __webpack_require__.p + \"/fonts/fee66e712a8a08eef5805a46892932ad.woff\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0\n// module id = 7\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.woff?");
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = __webpack_require__.p + \"b06871f281fee6b241d60582ae9369b9.ttf\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0\n// module id = 8\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.ttf?");
+	eval("module.exports = __webpack_require__.p + \"/fonts/b06871f281fee6b241d60582ae9369b9.ttf\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0\n// module id = 8\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.ttf?");
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = __webpack_require__.p + \"912ec66d7572ff821749319396470bde.svg\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0\n// module id = 9\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.svg?");
+	eval("module.exports = __webpack_require__.p + \"/fonts/912ec66d7572ff821749319396470bde.svg\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0\n// module id = 9\n// module chunks = 0\n//# sourceURL=webpack:///./~/font-awesome/fonts/fontawesome-webfont.svg?");
 
 /***/ },
 /* 10 */
